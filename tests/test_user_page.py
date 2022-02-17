@@ -2,7 +2,7 @@ import allure
 import pytest
 from pages.welcome import WelcomePage
 from pages.user import UserPage
-from appium import webdriver
+from appium.webdriver.webdriver import Webdriver
 
 @allure.step('Go to User page')
 @pytest.fixture(scope="class")
@@ -11,7 +11,7 @@ def go_to_user_page(driver):
 
 @allure.step('Restart app and go to user page')
 @pytest.fixture()
-def restart_app_and_got_to_user_page(driver: webdriver):
+def restart_app_and_got_to_user_page(driver: Webdriver):
     driver.reset()
     WelcomePage(driver).click_start()
 
