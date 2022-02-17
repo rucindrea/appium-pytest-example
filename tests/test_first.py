@@ -1,11 +1,11 @@
 
 import allure
 import pytest
-from appium import webdriver
+from appium.webdriver.webdriver import WebDriver
 from appium.webdriver.common.appiumby import AppiumBy
 
 class TestPlantManagerApp:
-    driver: webdriver
+    driver: WebDriver
     
     def test_first_screen(self):
         pass
